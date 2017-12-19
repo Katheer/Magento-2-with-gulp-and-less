@@ -1,0 +1,153 @@
+.account {
+	.table-wrapper {
+		font-family: Sailec;
+		.table:not(.cart):not(.totals) > thead > tr > th{
+			border-bottom: 2px solid #e8e9ed;
+			line-height: 14px;
+			color: #a2a3b4;
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+		.table:not(.cart):not(.totals) > tbody > tr > td {
+			border-bottom: 1px solid #e8e9ed;
+			color: #4b4e7a;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			padding: 22px 10px 18px;
+
+			
+
+		}
+	}
+}
+
+
+
+//
+//  Desktop
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+	.account {
+		.table-wrapper {
+			/* View Button*/
+			.view {
+				position: relative;
+				span {
+					display: inline-block;
+					visibility: hidden;
+					width: 80px;
+					font-size: 10px;
+					font-weight: 500;
+					color: #ffffff;
+					background-color: #000;
+					text-align: center;
+					border-radius: 6px;
+					padding: 5px 0;
+					position: absolute;
+					z-index: 1;
+					bottom: 30px;
+					left: 5px;
+					margin-left: -60px;
+					opacity: 0;
+					transition: opacity 1s;
+					&:after {
+						content: "";
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						margin-left: -5px;
+						border-width: 5px;
+						border-style: solid;
+						border-color: #000 transparent transparent transparent;
+					}
+
+				}
+				&:after {
+					content:"";
+					position : absolute;
+					background-image: url(../images/icon-stripe.png);
+					background-repeat: no-repeat;
+					width: 18px;
+					height: 12px;
+					background-position: -431px -99px;
+					margin-top: auto;
+					margin-bottom: auto;
+					top: 0;
+					bottom: 0;
+					margin-left: -24px;
+				}
+				&:hover {
+					&:after {
+						background-position: -431px -119px;
+					}
+					span {
+						visibility: visible;
+						opacity: 0.9; 
+					}
+				}
+			}
+
+			/* Order Button */
+			.order {
+				position: relative;
+				span {
+					font-size: 10px;
+					font-weight: 500;
+					color: #ffffff;
+					display: inline-block;
+					visibility: hidden;
+					width: 80px;
+					background-color: #000;
+					text-align: center;
+					border-radius: 6px;
+					padding: 5px 0;
+					position: absolute;
+					z-index: 1;
+					bottom: 30px;
+					left: 5px;
+					margin-left: -40px;
+					opacity: 0;
+					transition: opacity 1s;
+					&:after {
+						content: "";
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						margin-left: -5px;
+						border-width: 5px;
+						border-style: solid;
+						border-color: #000 transparent transparent transparent;
+					}	
+
+				}
+				&:after {
+					content:"";
+					position : absolute;
+					background-image: url(../images/icon-stripe.png);
+					background-repeat: no-repeat;
+					width: 14px;
+					height: 18px;
+					background-position: -464px -96px;
+					margin-top: auto;
+					margin-bottom: auto;
+					top: 0;
+					bottom: 0;
+				}
+				&:hover {
+					&:after {
+						background-position: -464px -119px;						
+					}
+					span {
+						visibility: visible;
+						opacity: 0.9; 
+					}
+				}
+			}
+		}
+	}
+}

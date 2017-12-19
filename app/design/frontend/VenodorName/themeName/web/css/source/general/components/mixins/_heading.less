@@ -1,0 +1,184 @@
+//
+//  mixin for heading extra style
+//  _____________________________________________
+
+.heding-extra-styles(@margin, @padding, @alignment, @mob-margin, @mob-padding){
+	text-align: @alignment;
+
+	@media only screen and (max-width: (@screen__m - 1)) {
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding;  
+	}	 
+}
+
+
+
+//
+//  mixins for headings  with margin, padding and text-alignment
+//  _____________________________________________ 
+
+.headings(
+	@colorType,     // Font color type values :: type-1, type-2 and type-3
+	@headingType,   // heading type values:: heading-1, heading-2, heading-3 and heading-4
+	@margin,        // margin for desktop (abover 768px)
+	@padding,       // padding for desktop (abover 768px)
+	@mob-margin,    // margin in mobile
+	@mob-padding,   // padding in mobile 
+	@alignment      // text-alignment
+){
+	
+	text-align: @alignment;
+
+	@media only screen and (max-width: (@screen__m - 1)) {
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding; 
+	}
+
+	.heading-color();
+	.heading-color() when (@colorType = 'type-1'){
+        color: @heading_color_1;
+	}
+	.heading-color() when (@colorType = 'type-2'){
+        color: @heading_color_2;
+	}
+	.heading-color() when (@colorType = 'type-3'){
+        color: @heading_color_3;
+	}
+
+	.heading-type(); 
+	.heading-type() when (@headingType = 'heading-1'){
+		font-family: @heading_ff_1;
+		font-weight: @heading_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 26px;
+			font-size: @mobile_heading_fs_1;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 45px;
+			font-size: @heading_fs_1;	
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-2'){
+		font-family: @heading_ff_2;
+		font-weight: @heading_fw_700;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 31px;
+			font-size: @heading_fs_2;
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-3'){
+		font-family: @heading_ff_3;	
+		font-weight: @heading_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 24px; 
+			font-size: @heading_fs_3; 
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-4'){
+		font-family: @heading_ff_3;	
+		font-weight: @heading_fw_700;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 19px;
+			font-size: @heading_fs_4;
+		}		
+	}
+}
+
+
+
+//
+//  mixins for headings  without margin, padding and text-alignment
+//  _____________________________________________ 
+ 
+.only-headings-types(
+	@colorType,     // Font color type values :: type-1, type-2 and type-3
+	@headingType   // heading type values:: heading-1, heading-2, heading-3 and heading-4
+){
+	.heading-color();
+	.heading-color() when (@colorType = 'type-1'){
+        color: @heading_color_1;
+	}
+	.heading-color() when (@colorType = 'type-2'){
+        color: @heading_color_2;
+	}
+	.heading-color() when (@colorType = 'type-3'){
+        color: @heading_color_3;
+	}
+
+	.heading-type(); 
+	.heading-type() when (@headingType = 'heading-1'){
+		font-family: @heading_ff_1;
+		font-weight: @heading_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 26px;
+			font-size: @mobile_heading_fs_1;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 45px;
+			font-size: @heading_fs_1;	
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-2'){
+		font-family: @heading_ff_2;
+		font-weight: @heading_fw_700;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 31px;
+			font-size: @heading_fs_2;
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-3'){
+		font-family: @heading_ff_3;	
+		font-weight: @heading_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 24px; 
+			font-size: @heading_fs_3; 
+		}		
+	}
+
+	.heading-type() when (@headingType = 'heading-4'){
+		font-family: @heading_ff_3;	
+		font-weight: @heading_fw_700;
+		@media only screen and (max-width: (@screen__m - 1)) {
+			line-height: 17px;
+			font-size: @mobile_heading_fs_2;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			line-height: 19px;
+			font-size: @heading_fs_4;
+		}		
+	}
+}

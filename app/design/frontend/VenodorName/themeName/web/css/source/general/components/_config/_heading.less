@@ -1,0 +1,20 @@
+// Call block element with following format
+//-- <div class="Heading type-Color type"> 
+// 		Your element , it can be any thing (Forthe Eg:: h1, h2, h3, p, span)
+//-- <div>
+//
+// Heading types are :: heading1,  heading2,  heading3 & heading4
+// Color types are :: colortype1, colortype2 & colortype3
+//-- So we can add class like this :: heading1-colortype1, heading2-colortype1, heading4-colortype2, etc..
+//
+// We can able to folowing mixin for adjust heading space and padding
+// -- .heding-extra-styles(margin in desktop , padding in desktop, text-alignment, margin in mobile, padding in mobile);  
+//
+// Without using a class we can able  to direct style the element using following mixin
+// -- .headings (
+// --   @colorType,     // Font color type values :: type-1, type-2 and type-3
+// --   @headingType,   // heading type values:: heading-1, heading-2, heading-3 and heading-4
+// --   @margin,        // margin for desktop (abover 768px)
+// --   @padding,       // padding for desktop (abover 768px)
+// --   @mob-margin,    // margin in mobile
+// --   @mob-p 

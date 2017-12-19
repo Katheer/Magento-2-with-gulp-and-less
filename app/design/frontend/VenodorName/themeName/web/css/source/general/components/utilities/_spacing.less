@@ -1,0 +1,46 @@
+// mixin for elements margin and padding
+.element-margin-padding(
+	@margin,       // blocks margin in web view
+	@padding,      // blocks padding in web view
+	@mob-margin,   // blocks margin in mobile view 
+	@mob-padding   // blocks padding in mobile view 
+){
+	@media only screen and (max-width: (@screen__m - 1)) {
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding;   
+	}	
+} 
+
+
+// mixin for elements margin
+.element-margin(
+	@margin,       // blocks margin in web view
+	@mob-margin   // blocks margin in mobile view 
+){
+	@media only screen and (max-width: (@screen__m - 1)) {
+		margin: @mob-margin;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;   
+	}	
+}
+
+
+// mixin for elements padding
+.element-padding(
+	@padding,      // blocks padding in web view
+	@mob-padding   // blocks padding in mobile view
+){
+	@media only screen and (max-width: (@screen__m - 1)) {
+		padding: @mob-padding;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		padding: @padding;   
+	}	
+}
+
+

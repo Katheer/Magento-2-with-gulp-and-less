@@ -1,0 +1,35 @@
+
+// 
+// mixin for custom buttons
+// _________________
+.custom-button( @font-size, @font-weight,  @color,@bg-color, @max-w,@text-t, @hover-color) {
+	button,input,a { 
+		font-size: @font-size;
+		font-weight: @font-weight;
+		color: @color;
+		background: @bg-color;
+		max-width: @max-w;
+		font-family: @heading_ff_2;
+		width: 100%;
+		line-height: 17px;
+		padding: 12px 28px 11px 29px;
+		text-transform: @text-t;
+		border: none;
+		letter-spacing: 1px;
+		.border-radius(3px);
+		.transition(0.4s, ease, all);
+		&:focus,
+		&:active,
+		&:visited,
+		&:link {
+			border: none;
+			color: @color;
+		}
+
+		&:hover {
+			border: none;
+			color: @hover-color;
+			background-color: @font_color-3;
+		}
+	}
+}

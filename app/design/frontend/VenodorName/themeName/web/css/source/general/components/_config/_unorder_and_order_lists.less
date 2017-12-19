@@ -1,0 +1,34 @@
+//
+// mixin Inner pages content block's  table 
+// ________________________________________
+
+.Inner-under-lists(
+	@ul-margin, /* Underlist margin */ 
+	@ul-padding,  /* Underlist padding */
+	@li-margin,  /* list margin */
+	@li-padding,  /* list padding */
+	@bullets-position-top,  /* bullet points position */
+	@bullets-bg-color,  /* bullet points background color */
+	@bullets-width,  /* bullet points width */
+	@bullets-height  /* bullet points height */
+) {
+	ul {
+		margin: @ul-margin;
+		padding: @ul-padding;
+		li {
+			position: relative;
+			padding: @li-padding;
+			margin: @li-margin;
+			&:after {
+				content:'';
+				top: @bullets-position-top;
+				left: 0;
+				position: absolute;
+				width: @bullets-width;
+				height: @bullets-height;
+				.border-radius(50%);
+				background-color: @bullets-bg-color;
+			}
+		}
+	}
+} 

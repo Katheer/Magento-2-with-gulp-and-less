@@ -1,0 +1,55 @@
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.recipes-slider{
+		&.slick-slider{
+			.slick-prev,
+			.slick-next {
+			    margin-top: -105px;
+			}
+		}
+	} 
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+	.recipes-slider{
+		&.slick-slider{
+			.slick-prev,
+			.slick-next {
+		        margin-top: -115px;
+			}
+		}
+	} 
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+	.recipes-slider{
+		&.slick-slider{
+			.slick-prev,
+			.slick-next {
+			    margin-top: -12px;
+			}
+		}
+	}  
+}
+
+@media(min-width: 1300px) {
+	.recipes-slider{
+		&.slick-slider{
+			.slick-prev {
+			    left: -44px !important;
+			}
+			.slick-next {
+			    right: -44px !important; 
+			}
+		}
+	} 
+}
+
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.recipes-slider{
+
+	}
+}

@@ -1,0 +1,90 @@
+
+//
+// mixin Inner pages content block's  table 
+// ________________________________________
+
+.unordered-ordered-lists(
+	@colortype   // Font color type values :: type-1, type-2 , type-3 and type-4
+){
+
+	li {
+		font-family: @ul_ol_ff;
+		font-weight: @ul_ol_fw_400;
+		text-align: left; 
+	}
+	ul {
+		li { 
+			position: relative; 
+			&:after {
+				content:'';
+				top: @li_bullets_position_from_top;
+				left: @li_bullets_position_from_left;
+				position: absolute;
+				width: @li_bullets_width;
+				height: @li_bullets_height;
+				border-radius:@li_bullets_border_radius;
+			}
+		}
+	}
+
+	.ul-li-color();
+
+	.ul-li-color() when (@colorType = 'type-1'){
+        li {
+			color: @ul_ol_color_1;
+		}
+		ul li {
+			&:after {
+				background-color: @ul_ol_color_1;
+			}
+		}
+	}
+	.ul-li-color() when (@colorType = 'type-2'){
+        li {
+			color: @ul_ol_color_2;
+		}
+		ul li {
+			&:after {
+				background-color: @ul_ol_color_2;
+			}
+		}
+	}
+	.ul-li-color() when (@colorType = 'type-3'){
+        li {
+			color: @ul_ol_color_3;
+		}
+		ul li {
+			&:after {
+				background-color: @ul_ol_color_3;
+			}
+		}
+	}
+	.ul-li-color() when (@colorType = 'type-4'){
+        li {
+			color: @ul_ol_color_4;
+		}
+		ul li {
+			&:after {
+				background-color: @ul_ol_color_4;
+			}
+		}
+	}
+
+
+	@media only screen and (max-width: (@screen__m - 1)) {	
+		li {
+			font-size: @mobile_ul_ol_fs;  
+			line-height: @mobile_ul_ol_lh;
+		}
+		ul li {padding-left: @mobile_ul_li_padding_left;}
+	}
+
+	@media only screen and (min-width: (@screen__m)) {
+		li {
+			font-size: @ul_ol_fs;  
+			line-height: @ul_ol_lh;
+		}
+		ul li {padding-left: @ul_li_padding_left;}
+	}
+} 
+

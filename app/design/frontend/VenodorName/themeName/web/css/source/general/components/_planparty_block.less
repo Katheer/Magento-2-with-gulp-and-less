@@ -1,0 +1,79 @@
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.planparty_block {
+		padding: 49px 0  50px;
+		background-image: url(../images/home/planing-a-party-bg.png);
+		background-position: center;
+		background-size: auto 100%;
+		background-color: #1f275c;
+		h2 {
+		    margin:  0 0 11px;
+			line-height: 26px;
+			color: #ffffff;
+			font-family: @custom_font_family_2;
+			font-size: 22px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		.introblock {
+			* {
+				color: #fff;
+			}
+			h3 {
+				margin:  0 0 20px;
+			}
+			p {
+			    margin: 0 auto 30px;
+				max-width: 318px;
+			}
+		}
+		.link-button-type-1 {
+			a {
+				max-width: 260px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.planparty_block {
+		padding: 32px  0 21px;
+		background-image: url(../images/home/mobile-planing-a-party-bg.png);
+		background-color: #1f275c;
+		h2 {
+			margin: 0 0 8px;
+			color: #fff;
+			line-height: 17px;
+			font-family: @custom_font_family_2;
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+		}
+		.introblock {
+			* {
+				color: #fff;
+			}
+			h3 {
+				margin: 0 0 13px;
+			}
+			p {
+				margin:  0 0 21px;
+			}
+		}
+		.link-button-type-1 {
+			a {
+				max-width: 200px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media(min-width: @screen__xxl) {
+	.planparty_block {
+		background-size: cover;	
+	}
+}

@@ -1,0 +1,117 @@
+  
+  .slick-slider {
+    .slick-next, 
+    .slick-prev {
+    display: block !important;
+    position: absolute;
+    height: 55px;
+    width: 18px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    margin-top: -3px;
+    padding: 0;
+    border: none;
+    outline: none !important; 
+    box-shadow: none;
+    z-index: 1; 
+    }
+
+
+   .slick-next:before,
+   .slick-prev:before {
+        content: "\f104";
+        height: 55px;
+        width: 18px;
+        line-height: 1;
+        opacity: 1;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #7d7e96;
+        font: normal normal normal 14px/1 FontAwesome;
+        border-radius: 50%;
+        padding: 0;
+        padding: 0;
+        font-size: 53px;
+        display: block;
+    }
+    .slick-next,
+    .slick-prev {
+        &:hover {
+          &:before {
+            color: #e63e30; 
+          }  
+        }
+    }
+
+    .slick-next:before {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); 
+    }
+}
+
+.slick-slider {
+   &.white-arrows {
+       .slick-next:before,
+       .slick-prev:before {
+            color: #fff;
+        }
+        .slick-next,
+        .slick-prev {
+            &:hover {
+              &:before {
+                color: #e63e30; 
+              }  
+            }
+        }
+    }     
+}
+
+.slick-slider {
+    &[arrows="false"]  {
+        .slick-next, 
+        .slick-prev {
+            display: none !important;
+        }
+    }
+    .slick-slide {
+        outline: 0 !important;
+    }
+}
+
+@media(min-width: 1300px) {
+    .slick-slider {
+        .slick-next {
+            right: -25px !important; 
+        }
+        .slick-prev {
+            left: -25px !important; 
+        } 
+    }
+}
+
+@media(min-width: 1350px) {
+    .slick-slider { 
+        .slick-next {
+            right: -59px !important; 
+        }
+        .slick-prev {
+            left: -59px !important; 
+        } 
+    }
+}
+
+@media(max-width: 1299px) { 
+    .slick-slider {
+        .slick-next {
+            right: 25px !important; 
+        }
+        .slick-prev {
+            left: 25px !important; 
+        } 
+    }
+}

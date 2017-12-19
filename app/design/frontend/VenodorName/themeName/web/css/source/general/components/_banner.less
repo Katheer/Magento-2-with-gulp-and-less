@@ -1,0 +1,110 @@
+
+	/* Banner Components
+	=================================== 	
+	
+	~ Description ~
+
+	1) Banner type-1 = Has 350px in height eg : (How it works Page).
+	2) Banner type-2 = Has 200px in height eg : (About us Page)
+
+	....................................................................
+
+	~ How to Use ~
+
+	Add background image on  the banner section with the relavant path : 
+	style="background-image: url('/office-molly/pub/media/wysiwyg/about-us/about-us-banner.png');"
+
+	Add Class to the relavent banner element like this :
+
+	<div class="banner-type-1 or banner-type-2 or banner-type-3">
+	<img src=""/>
+	</div>
+
+	================================== 
+	*/
+
+	//
+	//  Additional Page Variables
+	//  ____________________________________________
+
+	@bg_color: #661c18;
+
+	.banner {
+		&-type-1{
+			.background_img( center center, auto);
+			background-color: @bg_color;
+			position: relative ;
+			height: 350px;
+			.banner-wrapper {
+				.custom_positioning (absolute,0,0,0,0);
+				text-align: center; 
+				h2 {
+					text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+				}   
+			} 
+		}
+		&-type-2{
+			background-color: @bg_color;
+			position: relative ;
+			height: 200px;
+			.background_img( center center, auto);
+			.banner-wrapper {
+				.custom_positioning (absolute,0,0,0,0);
+				text-align: center; 
+				h2 {
+					text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+				}   
+			} 
+		}
+	}
+
+	//
+	//  Mobile
+	//  ______________________
+
+	.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+		.banner {
+			&-type-1 {
+				.banner-wrapper {
+					h2 {
+						margin-top: 64px;
+					}   
+				} 
+			}
+			&-type-2 {
+				.banner-wrapper {
+					h2 {
+						margin-top: 78px;
+					}   
+				} 
+			}
+		}
+	}
+
+	//
+	//  Desktop
+	//  _____________________
+
+	.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+		.banner {
+			&-type-1 {
+				.banner-wrapper {
+					h2 {
+						margin-top: 64px;
+					}   
+				} 
+			}
+
+			&-type-2 {
+				.banner-wrapper {
+					h2 {
+						margin-top: 78px;
+					}   
+				} 
+			}
+		}
+	}
+	
+
+
+	

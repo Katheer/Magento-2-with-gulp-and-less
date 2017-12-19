@@ -1,0 +1,178 @@
+.button-section {
+	&-type-1,
+	&-type-2,
+	&-type-3,
+	&-type-4,
+	&-type-5,
+	&-type-6, 
+	&-type-7,
+	&-type-8,
+	&-type-9 {
+		button,
+		input[type='button'] {
+			width: 100%;
+			display: block;
+			.border-radius(3px);
+			border: none;
+			outline: 0 !important;
+			.box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+			span {
+				color: @custom_bc_12;
+				font-weight: @custom_fw_700;
+				font-family: @custom_font_family_2;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+			
+			text-align: center;
+			.transition(0.4s, ease, all);
+		}
+	}
+}
+
+
+//
+//  Mobile
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.button-section {
+		&-type-1,
+		&-type-2,
+		&-type-3,
+		&-type-4,
+		&-type-5,
+		&-type-6,
+		&-type-7,
+		&-type-8,
+		&-type-9 {
+			button,
+			input[type='button'] {
+				padding: 12px 5px 10px;
+				span {
+					font-size: 12px;
+					line-height: 7px;
+					height: 14px;
+					font-weight: 700;
+					letter-spacing: 1.5px;
+				}
+			}
+		}
+	}	
+}
+
+//
+//  Desktop
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.button-section {
+		&-type-1,
+		&-type-2,
+		&-type-3,
+		&-type-4,
+		&-type-5,
+		&-type-6,
+		&-type-7,
+		&-type-8,
+		&-type-9 {
+			button,
+			input[type='button'] {
+				padding: 15px 20px 14px;
+				span {
+					font-size: @custom_fs_m;
+					line-height: 17px;
+				}
+			}
+		}
+	}
+}
+
+
+
+.button-section {
+	&-type-1 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_1;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_1; }
+			&:hover { background-color: @button_element_hover_color_1; }
+		}
+	}
+
+	&-type-2 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_2;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_2; }
+			&:hover { background-color: @button_element_hover_color_2; }
+		}
+	}
+
+	&-type-3 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_3;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_3; }
+			&:hover { background-color: @button_element_hover_color_3; }
+		}
+	}
+
+	&-type-4 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_4;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_4; }
+			&:hover { background-color: @button_element_hover_color_4; }
+		}
+	}
+
+	&-type-5 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_5;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_5; }
+			&:hover { background-color: @button_element_hover_color_5; }
+		}
+	}
+
+	&-type-6 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_6;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_6; }
+			&:hover { background-color: @button_element_hover_color_6; }
+		}
+	}
+
+	&-type-7 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_7;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_7; }
+			&:hover { background-color: @button_element_hover_color_7; }
+		}
+	}
+
+	&-type-8 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_8;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_8; }
+			&:hover { background-color: @button_element_hover_color_8; }
+		}
+	}
+	&-type-9 {
+		button,
+		input[type='button'] {
+			background-color: @button_element_color_9;
+			&:focus, &:active, &:visited, &:link { background-color: @button_element_color_9; }
+			&:hover { 
+				background-color: @button_element_hover_color_9;
+				span {
+					color: @button_element_color_9;
+				}
+			 }
+		}
+	}
+}

@@ -1,0 +1,168 @@
+//
+//  mixin for detail block and highlight block extra styles
+//  _____________________________________________
+
+.paragaraph-extra-styles( 
+	@margin,      // Paragaraph's margin in web view
+	@padding,     // Paragaraph's padding in web view
+	@alignment,   // Paragaraph's alignment
+	@mob-margin,  // Paragaraph's margin in mobile view
+	@mob-padding  // Paragaraph's padding in mobile view
+){
+	text-align: @alignment;
+ 
+	@media only screen and (max-width: (@screen__m - 1)) {	
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding;  
+	}
+}
+
+
+//
+//  mixin for detail block and highlight block extra styles
+//  _____________________________________________
+
+.parablocks-extra-styles(
+	@margin,       // blocks margin in web view
+	@padding,      // blocks padding in web view
+	@mob-margin,   // blocks margin in mobile view 
+	@mob-padding   // blocks padding in mobile view
+){
+	@media only screen and (max-width: (@screen__m - 1)) {	
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding;  
+	}	
+}
+
+
+//
+//   mixin for paragaraphs with margin, padding and text-alignment
+//  _____________________________________________
+
+.paragaraph-styles(
+	@colorType,     // Font color type values :: type-1, type-2 , type-3 and type-4
+	@paragaraphType,// heading type values:: highlight and normal
+	@margin,        // margin for desktop (abover 768px)
+	@padding,       // padding for desktop (abover 768px)
+	@mob-margin,    // margin in mobile
+	@mob-padding,   // padding in mobile 
+	@alignment      // text-alignment 
+){
+	
+	text-align: @alignment;
+
+	@media only screen and (max-width: (@screen__m - 1)) {	
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding; 
+	}
+
+	.paragaraph-color();
+	.paragaraph-color() when (@colorType = 'type-1'){
+        color: @paragaraph_color_1;
+	}
+	.paragaraph-color() when (@colorType = 'type-2'){
+        color: @paragaraph_color_2;
+	}
+	.paragaraph-color() when (@colorType = 'type-3'){
+        color: @paragaraph_color_3;
+	}
+	.paragaraph-color() when (@colorType = 'type-4'){
+        color: @paragaraph_color_4;
+	}
+
+	.pararaph-type(); 
+	.pararaph-type() when (@paragaraphType = 'highlight'){
+		font-family: @paragaraph_ff;
+		font-weight: @paragaraph_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {	
+			font-size: @mobile_highlight_paragaraph_fs;  
+			line-height: @mobile_highlight_paragaraph_lh;
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			font-size: @highlight_paragaraph_fs; 
+			line-height: @highlight_paragaraph_lh;	
+		}		
+	}
+
+	.pararaph-type() when (@paragaraphType = 'normal'){
+		font-family: @paragaraph_ff;
+		font-weight: @paragaraph_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {	
+			font-size: @mobile_normal_paragaraph_fs; 
+			line-height: @mobile_normal_paragaraph_lh;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			font-size: @normal_paragaraph_fs;
+			line-height: @normal_paragaraph_lh;
+		}		
+	}
+}
+ 
+
+
+//
+//  mixin for paragaraphs without margin, padding and text-alignment
+//  _____________________________________________
+
+.only-paragaraph-types(
+	@colorType,     // Font color type values :: type-1, type-2 , type-3 and type-4
+	@paragaraphType // heading type values:: highlight and normal
+){
+	.paragaraph-color();
+	.paragaraph-color() when (@colorType = 'type-1'){
+        color: @paragaraph_color_1;
+	}
+	.paragaraph-color() when (@colorType = 'type-2'){
+        color: @paragaraph_color_2;
+	}
+	.paragaraph-color() when (@colorType = 'type-3'){
+        color: @paragaraph_color_3;
+	}
+	.paragaraph-color() when (@colorType = 'type-4'){
+        color: @paragaraph_color_4;
+	}
+
+	.pararaph-type(); 
+	.pararaph-type() when (@paragaraphType = 'highlight'){
+		font-family: @paragaraph_ff;
+		font-weight: @paragaraph_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {	
+			font-size: @mobile_highlight_paragaraph_fs;  
+			line-height: @mobile_highlight_paragaraph_lh;
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			font-size: @highlight_paragaraph_fs; 
+			line-height: @highlight_paragaraph_lh;	
+		}
+	}
+
+	.pararaph-type() when (@paragaraphType = 'normal'){
+		font-family: @paragaraph_ff;
+		font-weight: @paragaraph_fw_400;
+		@media only screen and (max-width: (@screen__m - 1)) {	
+			font-size: @mobile_normal_paragaraph_fs; 
+			line-height: @mobile_normal_paragaraph_lh;	
+		}
+		@media only screen and (min-width: (@screen__m)) {
+			font-size: @normal_paragaraph_fs;
+			line-height: @normal_paragaraph_lh;
+		}		
+	}
+} 
+ 
+
+

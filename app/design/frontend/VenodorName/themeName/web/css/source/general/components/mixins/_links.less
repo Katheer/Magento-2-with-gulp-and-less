@@ -1,0 +1,84 @@
+//
+// Mixin for paragaraph link
+// __________________________
+
+.para-link(
+    @font-size,   // Link Font Size
+    @font-weight, // Link Font Weight
+    @font-family, // Link Font Family
+	@colortype    // Link type values are type-1  to type-8
+){
+	font-size: @font-size;
+	font-weight: @font-weight;
+	font-family: @font-family;
+	text-decoration: none;
+	.transition(0.4s, ease, all);
+	&:focus, &:active, &:visited, &:link, &:hover {
+		text-decoration: none;
+	}
+	.paragaraph-link-color();
+	.paragaraph-link-color() when (@colorType = 'type-1'){
+        color: @paragaraph_link_color_1;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_1; }
+		&:hover { color: @paragaraph_link__hover_color_1; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-2'){
+        color: @paragaraph_link_color_2;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_2; }
+		&:hover { color: @paragaraph_link__hover_color_2; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-3'){
+        color: @paragaraph_link_color_3;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_3; }
+		&:hover { color: @paragaraph_link__hover_color_3; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-4'){
+        color: @paragaraph_link_color_4;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_4; }
+		&:hover { color: @paragaraph_link__hover_color_4; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-5'){
+        color: @paragaraph_link_color_5;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_5; }
+		&:hover { color: @paragaraph_link__hover_color_5; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-6'){
+        color: @paragaraph_link_color_6;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_6; }
+		&:hover { color: @paragaraph_link__hover_color_6; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-7'){
+        color: @paragaraph_link_color_7;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_7; }
+		&:hover { color: @paragaraph_link__hover_color_7; }
+	}
+	.paragaraph-link-color() when (@colorType = 'type-8'){
+        color: @paragaraph_link_color_8;
+		&:focus, &:active, &:visited, &:link { color: @paragaraph_link_color_8; }
+		&:hover { color: @paragaraph_link__hover_color_8; }
+	}
+}
+
+
+// 
+// mixin for custom links
+// _________________
+ 
+.custom-links( @font-size, @font-weight,  @color, @hover-color) {
+	a {
+		font-size: @font-size;
+		font-weight: @font-weight;
+		color: @color;
+		.transition(0.4s, ease, all);
+		&:focus,
+		&:active,
+		&:visited,
+		&:link {
+			color: @color;
+		}
+
+		&:hover {
+			color: @hover-color;
+		}
+	}
+}

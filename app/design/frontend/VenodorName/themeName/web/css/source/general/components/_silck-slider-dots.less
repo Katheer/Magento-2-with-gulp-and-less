@@ -1,0 +1,136 @@
+//
+// White dots variables
+//___________________________
+
+@white-normal-color: rgba(0,0,0,0.5);
+@white-active-color: #ffffff;
+@white-hover-color: #ffffff;
+
+//
+// Red dots variables
+//___________________________
+
+@red-normal-color: #d0d1d9;
+@red-active-color: #e63e30;
+@red-hover-color: #e63e30;
+ 
+.white_dots,
+.red_dots {
+	ul.slick-dots li {
+	    opacity: 1;
+	    button {
+		    position: relative;
+		    outline: none !important;
+		    opacity: 1;
+		    .border-radius(50%);
+		    &:before {
+			    top: 0;
+			    left: 0;
+			    background-color: transparent;
+			    .border-radius(50%);
+			    opacity: 1;
+			    content: '';
+			    .transition(0.3s , ease, all);
+		    }
+	    }
+	}
+}
+
+.red_dots {
+	ul.slick-dots li {
+	    button {
+		    background-color: @red-normal-color;
+		    &:hover {
+		    	&:before {
+		    		background-color: @red-active-color;
+		    	}
+		    }
+	    }
+	    &.slick-active button {
+	    	&:before {
+	    		background-color: @red-active-color;
+	    	}
+	    }
+	}
+}
+
+.white_dots {
+	ul.slick-dots li {
+	    button {
+		    background-color: @white-normal-color;
+		    &:hover {
+		    	&:before {
+					.box-shadow(0 1px 5px rgba(0, 0, 0, 0.2));
+		    		background-color: @white-active-color;
+		    	}
+		    }
+	    }
+	    &.slick-active button {
+	    	&:before {
+				.box-shadow(0 1px 5px rgba(0, 0, 0, 0.2));
+	    		background-color: @white-active-color;
+	    	}
+	    }
+	}
+}
+
+
+div.slick-dotted.slick-slider,
+section.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-slider {
+    &[dots="false"]  {
+        ul.slick-dots {
+            display: none !important;
+        }
+    }
+}
+
+//
+//  ipad portrait
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.white_dots,
+	.red_dots {
+		ul.slick-dots li {
+			margin: 0 7.5px;
+			width: 6px;
+			height: 6px;
+			button {
+				width: 6px;
+				height: 6px;
+				&:before {
+					width: 6px;
+					height: 6px;
+				}
+			}
+		}
+	}
+}
+
+//
+//  Desktop
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.white_dots,
+	.red_dots {
+		ul.slick-dots li {
+		    margin: 0 10.5px 5px;
+			width: 12px;
+			height: 12px;
+			button {
+				width: 12px;
+				height: 12px;
+				&:before {
+					width: 12px;
+					height: 12px;
+				}
+			}
+		}
+	}
+}
+

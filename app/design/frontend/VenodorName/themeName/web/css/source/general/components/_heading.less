@@ -1,0 +1,171 @@
+//
+//  Heading block component
+//  _____________________________________________
+
+.heading1,
+.heading2,
+.heading3,
+.heading4 {
+	&-colortype1 {
+		* {
+			color: @heading_color_1;
+		} 
+	}
+	&-colortype2 {
+		* {
+			color: @heading_color_2;
+		}
+	}
+	&-colortype3 {
+		* {
+			color: @heading_color_3;
+		}
+	}	
+}
+
+// Section title  __________________________________
+.heading1 {
+	&-colortype1,
+	&-colortype2,
+	&-colortype3 {
+		* {
+			font-family: @heading_ff_1;
+			font-weight: @heading_fw_400;
+		}
+	}
+}
+
+
+
+
+// heading block 2  _________________________________ 
+.heading2 {
+	&-colortype1,
+	&-colortype2,
+	&-colortype3 {
+		* {
+			font-family: @heading_ff_2;
+			font-weight: @heading_fw_700;
+		}
+	}
+}
+
+
+// heading block 2 and 4 :: define common style ___
+.heading3,
+.heading4 {	
+	&-colortype1,
+	&-colortype2,
+	&-colortype3 {
+		* {
+			font-family: @heading_ff_3;	
+		}
+	}
+}
+
+// heading block 3  _________________________________ 
+.heading3 {
+	&-colortype1,
+	&-colortype2,
+	&-colortype3 {
+		* {
+			font-weight: @heading_fw_400;
+		}
+	}
+}
+
+// heading block 4  _________________________________ 
+.heading4 {
+	&-colortype1,
+	&-colortype2,
+	&-colortype3 {
+		* {
+			font-weight: @heading_fw_700;
+		}
+	}
+}
+
+//
+//  Mobile
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	// Section title  __________________________________
+	.heading1 {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 26px;
+				font-size: @mobile_heading_fs_1;
+			}
+		}
+	}
+	// heading block 2, 3 and 4 :: define common style __
+	.heading2,
+	.heading3,
+	.heading4 {	
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 17px;
+				font-size: @mobile_heading_fs_2;
+			}
+		}
+	}
+}
+
+
+//
+//  Desktop
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.heading1 {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 45px;
+				font-size: @heading_fs_1;
+			}
+		}
+	}
+
+	// heading block 2  _________________________________ 
+	.heading2 {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 31px;
+				font-size: @heading_fs_2;
+			}
+		}
+	}
+
+	// heading block 3  _________________________________ 
+	.heading3 {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 24px;
+				font-size: @heading_fs_3;
+			}
+		}
+	}
+
+	// heading block 4  _________________________________ 
+	.heading4 {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3 {
+			* {
+				line-height: 19px;
+				font-size: @heading_fs_4;
+			}
+		}
+	}
+}

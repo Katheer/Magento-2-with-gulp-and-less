@@ -1,0 +1,63 @@
+// 
+// Bread crumb variables
+// _____________________
+
+// Color _______
+@breadcrumb-link-color: @custom_bc_7;          // #a2a3b4 //
+@breadcrumb-link-hover-color: @custom_bc_1;    // #e63e30 //
+@breadcrumb-active-color: @custom_bc_5;        // #4b4e7a //
+
+// Typhography
+@breadcrumb-font-size: @custom_fs_m;           // 14px //
+@breadcrumb-font-weight: @custom_fw_400;       // 400 //
+@breadcrumb-font-family: @custom_font_family_3;
+@breadcrumb-line-height: 17px;
+
+// Separation variables
+
+@breadcrumb-separator-color: @custom_bc_8;     // #d0d1d9 //
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.breadcrumbs {
+	    margin: 0 0 20px;
+		.items {
+			.item {
+				a, 
+				strong {
+					font-family: @breadcrumb-font-family;
+					font-size: @breadcrumb-font-size;
+					line-height: @breadcrumb-line-height;
+					font-weight: @breadcrumb-font-weight;
+				}
+				a {
+					color: @breadcrumb-link-color;
+
+					&:focus,
+					&:visited,
+					&:active {
+						color: @breadcrumb-link-color;
+					}
+
+					&:hover {
+						color: @breadcrumb-link-hover-color;
+					}
+				}
+				strong {
+					color: @breadcrumb-active-color;
+				}
+				&:not(:last-child) {
+					&:after {
+						color: @breadcrumb-separator-color;
+						margin: 0 5px;	
+					}
+				}
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.breadcrumbs {
+		display: none;
+	}
+}

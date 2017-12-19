@@ -1,0 +1,106 @@
+// Mention Colors  __________________________________
+
+.highlight_block,
+.detail_block {
+	&-colortype1 {
+		* {
+			color: @paragaraph_color_1;
+		}
+	}
+	&-colortype2 {
+		* {
+			color: @paragaraph_color_2;
+		}
+	}
+	&-colortype3 {
+		* {
+			color: @paragaraph_color_3;
+		}
+	}
+	&-colortype4 {
+		* {
+			color: @paragaraph_color_4;
+		}
+	}	
+}
+
+
+// Mention Font families and Font weights  ___________
+
+.highlight_block,
+.detail_block {
+	&-colortype1,
+	&-colortype2,
+	&-colortype3,
+	&-colortype4	{
+		* {
+			font-family: @paragaraph_ff;
+			font-weight: @paragaraph_fw_400;
+		}
+	}
+}
+
+
+//
+//  Mobile
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.highlight_block {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3,
+		&-colortype4 {
+			* {
+				font-size: @mobile_highlight_paragaraph_fs;  
+				line-height: @mobile_highlight_paragaraph_lh;
+			}
+		}
+	}
+
+	.detail_block {
+		&-colortype1,
+		&-colortype2, 
+		&-colortype3,
+		&-colortype4 {
+			* {
+				font-size: @mobile_normal_paragaraph_fs; 
+				line-height: @mobile_normal_paragaraph_lh;
+			}
+		}
+	}
+}
+
+
+//
+//  Desktop
+//  _____________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.highlight_block {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3,
+		&-colortype4 {
+			* {
+				font-size: @highlight_paragaraph_fs; 
+				line-height: @highlight_paragaraph_lh;
+			}
+		}
+	}
+
+	.detail_block {
+		&-colortype1,
+		&-colortype2,
+		&-colortype3,
+		&-colortype4 {
+			* {
+				font-size: @normal_paragaraph_fs;
+				line-height: @normal_paragaraph_lh;
+			}
+		}
+	}
+}
+ 
+
+

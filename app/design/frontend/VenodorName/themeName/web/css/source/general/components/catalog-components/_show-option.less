@@ -1,0 +1,43 @@
+& when (@media-common = true) {
+	.top-toolbar-section  {
+		.limiter {
+		    float: left;
+		    display: block !important;	
+	    }
+	}
+	.limiter {
+	    padding: 0;
+		.limiter-text  {
+			display: none;
+		}	
+
+		label {
+			margin-right: 5px;
+			color: @custom_bc_5;
+			font-family: @custom_font_family_3;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+		}
+
+		select {
+		    margin: 0;
+		    padding: 6px 26px 4px 21px;
+		    height: 40px;
+		    width: 100px;
+			.border-radius(4px);
+			border: 1px solid @custom_bc_9;
+			background-color: @custom_bc_12;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-image: url(../images/select-arrow.png);
+			background-repeat: no-repeat;
+			background-position: right 16px center;
+			line-height: 17px;
+			color: @custom_bc_7;
+			font-family: @custom_font_family_3;
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+}

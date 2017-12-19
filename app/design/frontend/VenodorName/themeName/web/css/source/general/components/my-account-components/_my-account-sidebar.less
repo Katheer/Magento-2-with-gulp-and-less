@@ -1,0 +1,87 @@
+
+	/* My Account Sidebar Components
+	=================================== */
+
+
+	.account {
+		.content {
+				background: #fff; 
+			}
+		.sidebar-nav {
+			border-right: 1px solid @custom_bc_9;
+			padding-right: 30px;
+			.item {
+				border-top: 1px solid @custom_bc_9;
+				margin: 0;
+				position: relative;
+				a {
+					border-left: none;
+					display: block;
+					font-family: Sailec;
+					padding: 23px 0 23px 10px;
+					line-height: 19px;
+					color: @custom_bc_6;
+					font-size: 16px;
+					font-weight: 500;
+				}
+				&:first-child {
+					border-top: none; 
+				}
+				&:hover {
+					a {
+						color: @custom_bc_1;
+						background: @custom_bc_12; 
+						&:after {
+						content: '';
+						max-width: 8px;
+						max-height: 14px;
+						width: 100%;
+						height: 100%;
+						display: block;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: auto;
+						right: 10px;
+						margin-top: auto;
+						margin-bottom: auto;
+						background-image: url(../images/icon-stripe.png);
+						background-position: -435px -68px;
+					}
+					}
+				}
+			}
+			.item.current {
+					a {
+						padding: 0;
+					}
+				strong {
+					font-family: Sailec;
+					font-size: 16px;
+					padding: 23px 0 23px 10px;
+					border : none;
+					display: block;
+					position: relative;
+					color: @custom_bc_1;
+					&:after {
+						content: '';
+						max-width: 8px;
+						max-height: 14px;
+						width: 100%;
+						height: 100%;
+						display: block;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: auto;
+						right: 10px;
+						margin-top: auto;
+						margin-bottom: auto;
+						background-image: url(../images/icon-stripe.png);
+						background-position: -435px -68px;
+					}
+				}
+			}
+		}
+	}
+

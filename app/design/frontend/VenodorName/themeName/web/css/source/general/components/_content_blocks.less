@@ -1,0 +1,21 @@
+.content-block{
+	&-type-1 {
+		p {
+
+		}	
+	}
+}
+
+// mixin for elements contents
+.element-content(@fw,@fs,@lineHeight,@talign , @textransform, @col, @margin, @padding){
+	margin: @margin;
+	padding: @padding;
+	font-weight: @fw;
+	font-size: @fs;
+	line-height: @lineHeight;
+	text-align: @talign;
+	text-transform: @textransform;
+	color: @col; 
+}
+ 
+

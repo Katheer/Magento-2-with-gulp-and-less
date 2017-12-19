@@ -1,0 +1,150 @@
+// mixin for border radius with  custom values
+.custom-border-radius(@topRadius, @rightRadius, @bottomRadius, @leftRadius) {
+	border-radius:  @topRadius @rightRadius @bottomRadius @leftRadius;
+	-moz-border-radius:  @topRadius @rightRadius @bottomRadius @leftRadius;
+	-webkit-border-radius:  @topRadius @rightRadius @bottomRadius @leftRadius;
+}
+
+// mixin for border radius
+.border-radius(@radius) {
+	border-radius:  @radius;
+	-moz-border-radius:  @radius;
+	-webkit-border-radius:  @radius; 
+}
+
+// mixin for box shadow
+.box-shadow(@shadow-values) {
+	box-shadow:  @shadow-values;
+	-moz-box-shadow:  @shadow-values;
+	-webkit-box-shadow:  @shadow-values;
+}
+
+// mixin for box shadow none
+.box-shadow-none() {
+	box-shadow:  none;
+	-moz-box-shadow:  none;
+	-webkit-box-shadow:  none;
+}
+
+// mixin for transition
+.transition(@time , @type, @property) {
+	transition:  @time  @type  @property;
+	-moz-transition:  @time  @type  @property;
+	-webkit-transition:  @time  @type  @property;
+}
+
+// mixin for transform
+.transform(@value) {
+	transform: @value;
+	-moz-transform:  @value;
+	-webkit-transform:  @value;
+}
+
+// mixin for links 
+.anchor-links( @font-size, @font-weight,  @color, @hover-color) {
+	a {
+		font-size: @font-size;
+		font-weight: @font-weight;
+		color: @color;
+		.transition(0.4s, ease, all);
+		&:focus,
+		&:active,
+		&:visited,
+		&:link {
+			color: @color;
+		}
+
+		&:hover {
+			color: @hover-color;
+		}
+	}
+}
+
+// mixin for elements contents
+.element-content(@fw, @fs, @lineHeight, @talign, @textransform, @col, @margin, @padding){
+	margin: @margin;
+	padding: @padding;
+	font-weight: @fw;
+	font-size: @fs;
+	line-height: @lineHeight;
+	text-align: @talign;
+	text-transform: @textransform;
+	color: @col;
+}
+
+
+// mixin for elements margin and padding
+.element-marging-padding(
+	@margin,       // blocks margin in web view
+	@padding,      // blocks padding in web view
+	@mob-margin,   // blocks margin in mobile view 
+	@mob-padding   // blocks padding in mobile view
+	){
+	@media only screen and (max-width: (@screen__m - 1)) {
+		margin: @mob-margin;
+		padding: @mob-padding;
+	}
+	@media only screen and (min-width: (@screen__m)) {
+		margin: @margin;
+		padding: @padding;    
+	}	
+} 
+
+// mixin for image responsive
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	width: 100%;
+}
+
+// mixin for image size
+.img-size (@max-w,@max-h){
+	max-width: @max-w;		//max width for the image
+	max-height: @max-h;		//max height for the image
+	width: 100%;			
+	height: 100%;
+}
+
+// mixin for positioning 
+.custom_positioning (@pos,@top,@bot,@left,@right){
+	position: @pos;
+	top: @top;
+	bottom: @bot;
+	left: @left;
+	right: @right; 
+}
+
+//mixin for background images
+.background_img( @pos, @size){
+	content: "";
+	background-repeat: no-repeat;
+	background-position: @pos;
+	background-size: @size;
+}
+
+//mixin for placeholder
+.placeholder-color(@color){
+	::-webkit-input-placeholder {
+		/* Chrome/Opera/Safari */
+		color: $color;
+	}
+	::-moz-placeholder {
+		/* Firefox 19+ */
+		color: $color;
+	}
+	:-ms-input-placeholder {
+		/* IE 10+ */
+		color: $color;
+	}
+	:-moz-placeholder {
+		/* Firefox 18- */
+		color: $color;
+	}
+}
+
+// mixin for custom height and front
+.custom_h_f (@line_h,@font_s) {
+	line-height: @line_h;
+	font-size: @font_s;
+}

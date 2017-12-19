@@ -1,0 +1,67 @@
+//
+// Mixin for molly introduction block dynamic vlues contain properties
+// ___________________________
+
+.introblock-dynamic-properties(
+	@intro_block_margin,      // block margin in web
+	@intro_block_mob_margin,  // block margin in mobile
+	@intro_block_padding,     // block padding in web
+	@intro_block_mob_padding, // block padding in mobile
+	@intro_bloc_float_type,   // Intro block 'float' property value 
+	@h_margin,                // heading margin in web
+	@h_mob_margin,            // heading margin in mobile
+	@h_padding,	              // heading padding in web
+	@h_mob_padding,           // heading padding in mobile
+	@h_alignment,             // heading alignment
+	@p_margin,                // Paragaraph margin in web
+	@p_mob_margin,            // Paragaraph margin in mobile
+	@p_padding,               // Paragaraph padding in web
+	@p_mob_padding,           // Paragaraph padding in mobile
+	@p_alignment              // Paragaraph alignment
+){ 
+	float: @intro_bloc_float_type;
+	h2, 
+	h3 { text-align: @h_alignment; } 
+	p { text-align: @p_alignment; }
+
+	.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+		margin: @intro_block_mob_margin;
+		padding: @intro_block_mob_padding;
+		h2, 
+		h3 {
+			margin: @h_mob_margin;
+			padding: @h_mob_padding;
+		} 
+		p {
+			margin: @p_mob_margin;
+			padding: @p_mob_padding;
+		}
+	}
+
+	.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+		margin: @intro_block_margin;
+		padding: @intro_block_padding;
+		h2, 
+		h3 {
+			margin: @h_margin;
+			padding: @h_padding;		
+		} 
+		p { 
+			margin: @p_margin;
+			padding: @p_padding;	
+		}
+	}	
+}
+
+// mixin for elements contents
+.element-content(@fw, @fs, @lineHeight, @talign, @textransform, @col, @margin, @padding){
+	margin: @margin;
+	padding: @padding;
+	font-weight: @fw;
+	font-size: @fs;
+	line-height: @lineHeight;
+	text-align: @talign;
+	text-transform: @textransform;
+	color: @col;
+}
+ 

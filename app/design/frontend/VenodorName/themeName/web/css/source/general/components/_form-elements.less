@@ -1,0 +1,132 @@
+
+
+//
+//  Additional Page Variables
+//  _____________________________________________
+
+@form_font_color-w : #fff;
+@form_font_color-1 : #e8e9ed;
+@form_font_color-2 : #7d7e96;
+
+button,
+input,
+select,
+textarea {
+	outline-color:red;
+	.placeholder-color(#4b4e7a);
+}
+
+textarea:focus, 
+input:focus, 
+input[type]:focus, 
+.uneditable-input:focus {   
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.form-inner-wrapper {
+	.element-marging-padding (0, 60px 0, 0 , 30px 0);
+	.form-control {
+		border-radius: 4px;
+		height: 45px;
+		border: 1px solid @form_font_color-1;
+		.paragaraph-styles( 'type-2' , 'highlight' , 0 0 10px 0 ,10px 0 15px 20px ,0 0 10px 0,10px 0 10px 20px , left);
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.1px;
+		color: @form_font_color-2; 
+		&:focus {
+			outline:none;
+		}
+
+	}
+	.form-control:focus {
+		border-color: inherit;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.form-control.fname, .form-control.email, .form-control.phone-no, .form-control.street-add, .form-control.password, .form-control.date{
+		padding-left: 48px;
+	}
+	.fname-icon, .email-icon, .phone-no-icon, .street-add-icon, .password-icon, .date-icon {
+		position: relative;
+		display: block;
+		&:before {
+			position : absolute;
+			content: "";
+			background-image: url(../images/icon-stripe.png);
+			width: 13px;
+			height: 13px;
+		}
+	}
+	.fname-icon {
+		&:before {
+			left: 19px;
+			top: 17px;
+			background-position: -553px -13px;
+
+		}
+
+	}
+	.email-icon {
+		&:before {
+			left: 19px;
+			top: 17px;
+			background-position: -470px -11px;
+
+		}
+	}
+	.phone-no-icon {
+		&:before {
+			left: 21px;
+			top: 17px;
+			background-position: -527px -13px;
+
+		}
+	}
+	.street-add-icon {
+		&:before {
+			left: 21px;
+			top: 17px;
+			background-position: -503px -13px;
+
+		}
+	}
+	.password-icon {
+		&:before {
+			left: 21px;
+			top: 20px;
+			background-position: -583px -13px;
+
+		}
+	}
+	.date-icon {
+		&:before {
+			left: 21px;
+			top: 17px;
+			background-position: -613px -13px;
+
+		}
+	}
+	.button-section {
+		.custom-button ( 14px, 700, #fff,#e63e30,270px,uppercase,#fff);
+		text-align: center;
+		border: none;
+		padding-top: 20px;
+		&:hover {
+			input {
+				background : @font_color-3;
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.form-inner-wrapper{
+		.row-padding {
+			padding: 0 5px;
+		}
+	}
+}
+
